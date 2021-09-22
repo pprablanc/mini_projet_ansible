@@ -1,0 +1,6 @@
+- name: Launch ci
+  hosts: ci
+  become: true
+  gather_facts: false
+  roles:
+    - role-ci

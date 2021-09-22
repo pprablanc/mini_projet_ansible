@@ -1,0 +1,25 @@
+- name: Install git and clone Damienne repo
+  block:
+    - package:
+        name: git
+        state: latest
+      tags: git_packages
+    - command: git clone https://github.com/dviniere/student-list.git
+      tags: git_clone
+
+- name: Build image
+  block:
+    - command: docker build -t student_age ./student-list/simple_api/
+      tags: build_image
+    - command: docker-compose up -d
+      tags: build_image_compose
+
+
+#- name: Push image
+#  block:
+#    - command: 
+#      #tags:
+    
+    
+# login
+# push 
