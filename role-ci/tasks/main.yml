@@ -11,7 +11,8 @@
   block:
     - command: docker build -t student_age ./student-list/simple_api/
       tags: build_image
-    - command: docker-compose up -d
+    - command: docker-compose -f student-list/docker-compose.yml up -d
+    #- command: cd student-list && docker-compose up -d
       tags: build_image_compose
 
 
